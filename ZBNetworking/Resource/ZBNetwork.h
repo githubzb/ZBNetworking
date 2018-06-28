@@ -9,6 +9,8 @@
 #import "ZBResponse.h"
 #import "ZBFormData.h"
 #import "ZBHttpDownloadHandler.h"
+#import <AFNetworking/AFURLRequestSerialization.h>
+#import <zbpromise/PromiseHeader.h>
 
 typedef void(^ZBConstructBodyBlock)(id<AFMultipartFormData> formData);
 typedef void(^ZBProgressBlock)(NSProgress *progress);

@@ -6,6 +6,9 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 @interface ZBResponse : NSObject
 
 @property (nonatomic, strong) NSURLSessionDataTask *task;

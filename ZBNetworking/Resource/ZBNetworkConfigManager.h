@@ -6,6 +6,9 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworkReachabilityManager.h>
+
 typedef NSDictionary * (^ZBConfigBlock)(void);
 
 @interface ZBNetworkConfigManager : NSObject

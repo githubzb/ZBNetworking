@@ -6,9 +6,10 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
+#import <AFNetworking/AFHTTPSessionManager.h>
+
 typedef void (^ZBDownloadHandlerBlock)(BOOL finished, NSProgress *progress, NSURL *filePath, NSError *error);
 
-@class AFHTTPSessionManager;
 @protocol ZBURLDownloadHandler <NSObject>
 
 + (id<ZBURLDownloadHandler>)downloadSessionManager:(AFHTTPSessionManager *)sessionManager

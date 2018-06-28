@@ -6,6 +6,8 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT NSString *const ZBMimeTypeImageOfPNG;

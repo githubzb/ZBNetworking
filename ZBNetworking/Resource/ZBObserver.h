@@ -6,6 +6,8 @@
 //  Copyright © 2018年 zb. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 @interface ZBObserver : NSObject
 
 @property (nonatomic, copy) NSString *name;

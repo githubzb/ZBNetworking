@@ -10,6 +10,7 @@
 #import "ZBNetworkConfigManager.h"
 #import "ZBSessionManager.h"
 #import "ZBHttpRequestFormatter.h"
+#import <Reachability/Reachability.h>
 
 static NSString * const ZBURLErrorOfNotFoundNetwork = @"当前无网络连接";
 static inline NSString *ZBURLQueryDecoding(NSString *str){

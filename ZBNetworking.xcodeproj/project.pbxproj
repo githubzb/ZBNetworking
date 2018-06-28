@@ -39,8 +39,7 @@
 		6D0463D020E394AB00D2BFC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D0463D220E394AB00D2BFC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D0463D320E394AB00D2BFC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D0463DB20E3950300D2BFC1 /* ZBNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNetworking.h; sourceTree = "<group>"; };
-		6D0463DC20E398C500D2BFC1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6D0463DB20E3950300D2BFC1 /* ZBNetworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNetworkHeader.h; sourceTree = "<group>"; };
 		6D0463DD20E39BBB00D2BFC1 /* ZBSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBSessionManager.h; sourceTree = "<group>"; };
 		6D0463DE20E39BBB00D2BFC1 /* ZBSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBSessionManager.m; sourceTree = "<group>"; };
 		6D0463E020E39C2100D2BFC1 /* ZBNetworkConfigManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBNetworkConfigManager.h; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 				6D0463CF20E394AB00D2BFC1 /* LaunchScreen.storyboard */,
 				6D0463D220E394AB00D2BFC1 /* Info.plist */,
 				6D0463D320E394AB00D2BFC1 /* main.m */,
-				6D0463DC20E398C500D2BFC1 /* PrefixHeader.pch */,
 				6D0463F520E3B44F00D2BFC1 /* SecondViewController.h */,
 				6D0463F620E3B44F00D2BFC1 /* SecondViewController.m */,
 				6D0463F720E3B44F00D2BFC1 /* SecondViewController.xib */,
@@ -126,7 +124,7 @@
 		6D0463DA20E394CB00D2BFC1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				6D0463DB20E3950300D2BFC1 /* ZBNetworking.h */,
+				6D0463DB20E3950300D2BFC1 /* ZBNetworkHeader.h */,
 				6D0463E320E39CF500D2BFC1 /* ZBNetwork.h */,
 				6D0463E420E39CF500D2BFC1 /* ZBNetwork.m */,
 				6D0463DD20E39BBB00D2BFC1 /* ZBSessionManager.h */,
@@ -402,9 +400,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				GCC_PREFIX_HEADER = ZBNetworking/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ZBNetworking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,9 +420,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				GCC_PREFIX_HEADER = ZBNetworking/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = ZBNetworking/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
