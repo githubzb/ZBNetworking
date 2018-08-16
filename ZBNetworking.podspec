@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ZBNetworking"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "AFNetworking+ZBPromise."
   s.description  = <<-DESC
                   This is a Network framework of AFNetworking+ZBPromise.
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/githubzb/ZBNetworking.git", :tag => "#{s.version}" }
   s.source_files  = "#{s.name}/Resource/**/*.{h,m}"
   s.requires_arc = true
-  s.dependency "zbpromise", "~> 0.0.2"
+  s.dependency "zbpromise", "~> 0.0.3"
   s.dependency "AFNetworking", "~> 3.2.1"
   s.dependency "Reachability", "~> 3.2"
 
