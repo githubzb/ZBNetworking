@@ -16,6 +16,8 @@ typedef void(^ZBConstructBodyBlock)(id<AFMultipartFormData> formData);
 typedef void(^ZBProgressBlock)(NSProgress *progress);
 typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress *progress, NSURL *filePath, NSError *error);
 
+typedef ZBPromise<ZBResponse *> ZBResult;
+
 @interface ZBNetwork : NSObject
 
 
@@ -28,10 +30,10 @@ typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress 
  @param open    是否开启SSL公钥验证，YES:开启；NO:关闭
  @return        回调数据
  */
-+ (ZBPromise<ZBResponse *> *)getUrl:(NSString *)url
-                             header:(NSDictionary *)header
-                             params:(NSDictionary *)params
-                      openSSLVerify:(BOOL)open;
++ (ZBResult *)getUrl:(NSString *)url
+              header:(NSDictionary *)header
+              params:(NSDictionary *)params
+       openSSLVerify:(BOOL)open;
 
 /**
  发送一个POST请求
@@ -42,10 +44,10 @@ typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress 
  @param open    是否开启SSL公钥验证，YES:开启；NO:关闭
  @return        回调数据
  */
-+ (ZBPromise<ZBResponse *> *)postUrl:(NSString *)url
-                              header:(NSDictionary *)header
-                              params:(NSDictionary *)params
-                       openSSLVerify:(BOOL)open;
++ (ZBResult *)postUrl:(NSString *)url
+               header:(NSDictionary *)header
+               params:(NSDictionary *)params
+        openSSLVerify:(BOOL)open;
 
 /**
  发送一个POST请求（multipart/form-data）
@@ -58,12 +60,12 @@ typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress 
  @param progress    进度回调
  @return            回调数据
  */
-+ (ZBPromise<ZBResponse *> *)postUrl:(NSString *)url
-                              header:(NSDictionary *)header
-                              params:(NSDictionary *)params
-                  constructBodyBlock:(ZBConstructBodyBlock)body
-                       openSSLVerify:(BOOL)open
-                       progressBlock:(ZBProgressBlock)progress;
++ (ZBResult *)postUrl:(NSString *)url
+               header:(NSDictionary *)header
+               params:(NSDictionary *)params
+   constructBodyBlock:(ZBConstructBodyBlock)body
+        openSSLVerify:(BOOL)open
+        progressBlock:(ZBProgressBlock)progress;
 
 /**
  上传文件（multipart/form-data）
@@ -76,12 +78,12 @@ typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress 
  @param progress    上传进度回调
  @return            回调数据
  */
-+ (ZBPromise<ZBResponse *> *)uploadUrl:(NSString *)url
-                                header:(NSDictionary *)header
-                                params:(NSDictionary *)params
-                                 files:(NSArray<ZBFormData *> *)files
-                         openSSLVerify:(BOOL)open
-                         progressBlock:(ZBProgressBlock)progress;
++ (ZBResult *)uploadUrl:(NSString *)url
+                 header:(NSDictionary *)header
+                 params:(NSDictionary *)params
+                  files:(NSArray<ZBFormData *> *)files
+          openSSLVerify:(BOOL)open
+          progressBlock:(ZBProgressBlock)progress;
 
 /**
  文件下载（支持断点下载）
@@ -132,7 +134,7 @@ typedef void (^ZBDownloadResponseBlock)(BOOL success, BOOL finished, NSProgress 
 @end
 
 
-ZBPromise<ZBResponse *> * getUrl(NSString *url, NSDictionary *header, NSDictionary *params);
-ZBPromise<ZBResponse *> * postUrl(NSString *url, NSDictionary *header, NSDictionary *params);
-ZBPromise<ZBResponse *> * uploadUrl(NSString *url, NSDictionary *header, NSDictionary *params, NSArray<ZBFormData *> *files, ZBProgressBlock progress);
+ZBResult * getUrl(NSString *url, NSDictionary *header, NSDictionary *params);
+ZBResult * postUrl(NSString *url, NSDictionary *header, NSDictionary *params);
+ZBResult * uploadUrl(NSString *url, NSDictionary *header, NSDictionary *params, NSArray<ZBFormData *> *files, ZBProgressBlock progress);
 ZBPromise<NSURL *> * download(NSString *url, NSString *filePath, ZBProgressBlock progressBlock);
