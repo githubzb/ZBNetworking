@@ -34,7 +34,12 @@ static AFHTTPSessionManager * ZBSessionManagerForKey(NSString *key){
 + (AFHTTPSessionManager *)defaultSessionManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        AFHTTPSessionManager *manager = nil;
+        if ([ZBNetworkConfigManager baseURL]) {
+            manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[ZBNetworkConfigManager baseURL]];
+        }else{
+            manager = [AFHTTPSessionManager manager];
+        }
         manager.requestSerializer.timeoutInterval = [ZBNetworkConfigManager timeout];
         
         AFJSONResponseSerializer *jsonSerializer = [AFJSONResponseSerializer serializer];
@@ -55,7 +60,12 @@ static AFHTTPSessionManager * ZBSessionManagerForKey(NSString *key){
 + (AFHTTPSessionManager *)publicKeySessionManager{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        AFHTTPSessionManager *manager = nil;
+        if ([ZBNetworkConfigManager baseURL]) {
+            manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[ZBNetworkConfigManager baseURL]];
+        }else{
+            manager = [AFHTTPSessionManager manager];
+        }
         manager.requestSerializer.timeoutInterval = [ZBNetworkConfigManager timeout];
         NSSet *cers = [AFSecurityPolicy certificatesInBundle:[NSBundle mainBundle]];
         if ([cers count]>0) {

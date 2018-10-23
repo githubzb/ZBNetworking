@@ -66,6 +66,12 @@
 + (void)setOpenLog:(BOOL)openLog{
     [ZBNetworkConfigManager shareManager].openLog = openLog;
 }
++ (void)setBaseURL:(NSURL *)baseURL{
+    [ZBNetworkConfigManager shareManager].baseURL = baseURL;
+}
++ (NSURL *)baseURL{
+    return [ZBNetworkConfigManager shareManager].baseURL;
+}
 + (BOOL)startedMonitoring{
     return [ZBNetworkConfigManager shareManager].startedMonitoring;
 }

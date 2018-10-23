@@ -19,6 +19,11 @@ typedef NSDictionary * (^ZBConfigBlock)(void);
 @property (nonatomic, assign) BOOL openLog;
 
 /**
+ 设置request的baseURL
+ */
+@property (nonatomic, copy) NSURL *baseURL;
+
+/**
  标示是否已经启动了网络监听服务
  YES：已启动    NO：未启动
  */
@@ -47,6 +52,8 @@ typedef NSDictionary * (^ZBConfigBlock)(void);
 
 + (BOOL)openLog;
 + (void)setOpenLog:(BOOL)openLog;
++ (void)setBaseURL:(NSURL *)baseURL;
++ (NSURL *)baseURL;
 + (BOOL)startedMonitoring;
 + (NSDictionary *)publicParameter;
 + (NSDictionary *)publicHeader;
