@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ZBNetworking"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "AFNetworking+ZBPromise."
   s.description  = <<-DESC
                   This is a Network framework of AFNetworking+ZBPromise.
